@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 32
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 1
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -94,7 +94,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.hoangkute123xyz.hoang_libs'
             artifactId = 'android-common'
-            version = '1.0.1'
+            version = '1.0.0'
 
             afterEvaluate {
                 from components.release
