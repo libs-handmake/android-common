@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_500">#9E9E9E</color>
+
+    <color name="orange_sound_cloud">#ff6a22</color>
+    <color name="orange_sound_cloud_transparent_70">#B3ff6a22</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_600">#FB8C00</color>
+    <color name="orange_600_a80">#CCFB8C00</color>
+    <color name="orange_700">#F57C00</color>
+    <color name="orange_700_a80">#CCF57C00</color>
+    <color name="orange_800">#EF6C00</color>
+    <color name="orange_800_a80">#CCEF6C00</color>
+
+    <color name="black_100">#F5F5F5</color>
+    <color name="black_200">#EEEEEE</color>
+    <color name="black_300">#E0E0E0</color>
+    <color name="black_400">#BDBDBD</color>
+    <color name="black_700">#616161</color>
+    <color name="black_800">#424242</color>
+    <color name="black_850">#323232</color>
+    <color name="black_900">#212121</color>
+    <color name="black_950">#121212</color>
+</resources>

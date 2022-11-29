@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="MyCustomRecyclerView">
+        <attr name="rv_clip_to_padding" format="boolean" />
+        <attr name="rv_padding_end" format="dimension" />
+        <attr name="rv_padding_top" format="dimension" />
+        <attr name="rv_padding_start" format="dimension" />
+        <attr name="rv_padding_bottom" format="dimension" />
+        <attr name="rv_padding_horizontal" format="dimension" />
+        <attr name="rv_padding" format="dimension" />
+        <attr name="place_holder_text" format="string" />
+        <attr name="rv_padding_vertical" format="dimension" />
+        <attr name="rv_split_motion_events" format="boolean" />
+        <attr name="useShimmer" format="boolean" />
+        <attr name="rv_need_to_show_placeholder" format="boolean" />
+    </declare-styleable>
+</resources>
