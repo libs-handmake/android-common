@@ -76,8 +76,10 @@ class BottomMenuNavigation : LinearLayout {
     private fun createMenuItem(index: Int, menuItem: MenuItem) {
         val itemBinding = LayoutItemBottomMenuBinding.inflate(context.layoutInflater).apply {
             tvMenuTitle.text = menuItem.title
-            lottieMenuView.setAnimation(menuItem.animation)
-            imgMenuItem.setImageResource(menuItem.drawable)
+            menuItem.animation?.let { lottieMenuView.setAnimation(it) }
+                ?: kotlin.run { lottieMenuView.gone() }
+            menuItem.drawable?.let { imgMenuItem.setImageResource(it) }
+                ?: kotlin.run { imgMenuItem.gone() }
             changeSateItemView(menuItem)
             root.clickNoAnim {
                 selectedItemAt(index)
@@ -110,8 +112,8 @@ class BottomMenuNavigation : LinearLayout {
     }
 
     data class MenuItem(
-        @RawRes val animation: Int,
-        @DrawableRes val drawable: Int,
+        @RawRes val animation: Int? = null,
+        @DrawableRes val drawable: Int? = null,
         val title: String
     )
 }
