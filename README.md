@@ -11,7 +11,7 @@ Add dependencies in your gradle:
         }
     }
     dependencies {
-        implementation 'com.github.libs-handmake:android-common:1.0.1'
+        implementation 'com.github.libs-handmake:android-common:1.0.2
     }
 ```
 
