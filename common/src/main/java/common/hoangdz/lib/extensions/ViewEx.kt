@@ -2,6 +2,9 @@
 
 package common.hoangdz.lib.extensions
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
@@ -389,4 +392,19 @@ val Int.dpFloat
     get() = CommonApp.instance?.let {
         it.dimenFloat(it.getResID<com.intuit.sdp.R.dimen>("_${this}sdp"))
     } ?: 0
+
+fun View.clickWithScale(needToShowInterstitial: Boolean = false, onClick: (View) -> Unit) {
+    this.setOnClickListener {
+        AnimatorSet().apply {
+            play(scaleXY(0.95f, 80L, false))
+                .before(scaleXY(1f, 80L, false))
+            addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator?) {
+                    super.onAnimationEnd(animation)
+                    onClick(this@clickWithScale)
+                }
+            })
+        }.start()
+    }
+}
 

@@ -15,4 +15,9 @@
         <attr name="useShimmer" format="boolean" />
         <attr name="rv_need_to_show_placeholder" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="BottomMenuNavigation">
+        <attr name="color_selected" format="color" />
+        <attr name="color_unselected" format="color" />
+    </declare-styleable>
 </resources>

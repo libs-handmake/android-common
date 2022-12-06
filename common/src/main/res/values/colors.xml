@@ -28,4 +28,6 @@
     <color name="black_850">#323232</color>
     <color name="black_900">#212121</color>
     <color name="black_950">#121212</color>
+    <color name="black_alpha_30">#4D000000</color>
+    <color name="gray">#717171</color>
 </resources>

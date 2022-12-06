@@ -5,6 +5,9 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.view.View
+import androidx.annotation.IdRes
+import androidx.constraintlayout.motion.widget.MotionLayout
+import common.hoangdz.lib.listener.SimpleMotionLayoutListener
 import kotlinx.coroutines.suspendCancellableCoroutine
 
 /**
@@ -214,6 +217,31 @@ fun View.animateViewBySine(
         ).with(
             moveY(-limitAnimateY, duration = duration)
         ).with(alphaAnimate(0f, duration, needToStartNow = true))
+    }
+}
+
+suspend fun MotionLayout.awaitTransition(
+    @IdRes startId: Int,
+    @IdRes endId: Int,
+    duration: Int? = null
+) = suspendCancellableCoroutine<Unit> {
+    var transitionListener: SimpleMotionLayoutListener? = null
+    try {
+        transitionListener = object : SimpleMotionLayoutListener() {
+            override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
+                it.resumeWith(Result.success(Unit))
+                removeTransitionListener(transitionListener)
+            }
+        }
+        setTransition(startId, endId)
+        duration?.let { dur ->
+            setTransitionDuration(dur)
+        }
+        progress = 0f
+        addTransitionListener(transitionListener)
+        transitionToEnd()
+    } catch (e: Throwable) {
+        it.resumeWith(Result.failure(e))
     }
 }
 
